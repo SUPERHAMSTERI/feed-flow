@@ -137,7 +137,7 @@ dependencies {
  
     implementation(libs.compose.multiplatform.runtime)
     implementation(libs.compose.multiplatform.foundation)
-    implementation(libs.compose.material3)
+    implementation(libs.compose.multiplatform.material3)
     implementation(libs.compose.multiplatform.material.icons.extended)
     implementation(libs.compose.multiplatform.ui)
     implementation(libs.compose.multiplatform.ui.tooling)
@@ -181,8 +181,6 @@ dependencies {
     "googlePlayImplementation"(libs.kotlinx.coroutines.play.services)
     "googlePlayImplementation"(libs.google.api.client.android)
     "googlePlayImplementation"(libs.google.api.services.drive)
-
-    debugImplementation(libs.compose.multiplatform.ui.tooling)
 
     testImplementation(libs.junit)
     testImplementation(libs.koin.test)

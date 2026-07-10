@@ -11,7 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,6 +24,7 @@ import com.prof18.feedflow.desktop.resources.icon
 import com.prof18.feedflow.shared.ui.theme.rememberDesktopDarkTheme
 import org.jetbrains.compose.resources.painterResource
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 @Suppress("MagicNumber")
 fun SplashContent(
@@ -60,7 +62,7 @@ fun SplashContent(
                 modifier = Modifier.size(120.dp),
             )
             Spacer(modifier = Modifier.height(24.dp))
-            CircularProgressIndicator(
+            CircularWavyProgressIndicator(
                 progress = { progress },
                 color = primaryColor,
                 modifier = Modifier.size(40.dp),

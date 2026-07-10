@@ -11,7 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -79,7 +79,7 @@ fun EditFeedContent(
                     enabled = !deleteInProgressState,
                 ) {
                     if (deleteInProgressState) {
-                        CircularProgressIndicator(
+                        CircularWavyProgressIndicator(
                             modifier = Modifier.size(ButtonDefaults.IconSize),
                         )
                     } else {
@@ -223,7 +223,7 @@ fun EditFeedContent(
                 onClick = editFeed,
             ) {
                 if (showLoading) {
-                    CircularProgressIndicator(
+                    CircularWavyProgressIndicator(
                         color = MaterialTheme.colorScheme.onPrimary,
                         modifier = Modifier.size(ButtonDefaults.IconSize),
                     )

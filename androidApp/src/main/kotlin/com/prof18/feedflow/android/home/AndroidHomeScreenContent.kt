@@ -19,7 +19,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState
 import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.MaterialTheme
@@ -237,7 +237,7 @@ fun AndroidHomeScreenContent(
                                     contentAlignment = Alignment.Center,
                                     modifier = Modifier.fillMaxSize(),
                                 ) {
-                                    CircularProgressIndicator()
+                                    CircularWavyProgressIndicator()
                                 }
                             } else {
                                 Box(

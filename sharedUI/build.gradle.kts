@@ -44,7 +44,7 @@ kotlin {
             dependencies {
                 api(libs.io.coil.network)
                 implementation(libs.compose.multiplatform.ui.tooling.preview)
-                implementation(libs.compose.material3)
+                implementation(libs.compose.multiplatform.material3)
                 implementation(libs.compose.multiplatform.ui.tooling)
             }
         }

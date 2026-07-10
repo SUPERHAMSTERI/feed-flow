@@ -29,10 +29,13 @@ import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.outlined.TextFields
 import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.HorizontalFloatingToolbar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialExpressiveTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Scaffold
@@ -97,6 +100,7 @@ private val readerModeMaxContentWidth = 720.dp
 private val readerPaneTopContentFadeHeight = 30.dp
 private val readerTextSettingsMenuWidth = 420.dp
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 internal fun ReaderModeScreen(
     feedItemUrlInfo: FeedItemUrlInfo,
@@ -232,7 +236,7 @@ internal fun ReaderModeScreen(
                             modifier = Modifier
                                 .fillMaxSize(),
                         ) {
-                            CircularProgressIndicator()
+                            CircularWavyProgressIndicator()
                         }
                     }
 
@@ -325,6 +329,7 @@ internal fun ReaderModeScreen(
 
                             VerticalScrollbar(
                                 modifier = Modifier
+                                    .padding(Spacing.xsmall)
                                     .align(Alignment.TopEnd)
                                     .fillMaxHeight(),
                                 adapter = rememberScrollbarAdapter(scrollState),
@@ -371,26 +376,14 @@ internal fun ReaderModeScreen(
 
         if (state is ReaderModeState.Success || state is ReaderModeState.HtmlNotAvailable) {
             val strings = LocalFeedFlowStrings.current
-
-            Surface(
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(end = Spacing.regular, bottom = Spacing.regular),
-                shape = RoundedCornerShape(18.dp),
-                color = MaterialTheme.colorScheme.surfaceContainerHigh,
-                contentColor = MaterialTheme.colorScheme.onSurface,
-                tonalElevation = 2.dp,
-                shadowElevation = 4.dp,
-                border = BorderStroke(
-                    width = 1.dp,
-                    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
-                ),
+            Box(Modifier
+                .align(Alignment.BottomEnd)
+                .padding(end = Spacing.regular, bottom = Spacing.regular),
             ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = Spacing.small),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(Spacing.small),
-                ) {
+            HorizontalFloatingToolbar(
+                collapsedShadowElevation = 4.dp,
+                expanded = false,
+                content = {
                     TooltipBox(
                         positionProvider = TooltipDefaults.rememberTooltipPositionProvider(
                             positioning = TooltipAnchorPosition.Above,
@@ -427,9 +420,10 @@ internal fun ReaderModeScreen(
                         }
                     }
                 }
-            }
+            )
         }
     }
+}
 }
 
 private fun handleKeyEvent(

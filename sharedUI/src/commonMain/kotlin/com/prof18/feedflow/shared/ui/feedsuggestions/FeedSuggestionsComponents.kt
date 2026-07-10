@@ -19,7 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.RssFeed
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
@@ -69,7 +69,7 @@ fun FeedSuggestionsContent(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
-            CircularProgressIndicator()
+            CircularWavyProgressIndicator()
         }
     } else {
         Column(
@@ -261,9 +261,8 @@ private fun AddButton(
                 enabled = false,
                 contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
             ) {
-                CircularProgressIndicator(
+                CircularWavyProgressIndicator(
                     modifier = Modifier.size(16.dp),
-                    strokeWidth = 2.dp,
                 )
             }
         }

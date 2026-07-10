@@ -16,7 +16,7 @@ import androidx.compose.material.icons.filled.LinkOff
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -109,7 +109,7 @@ private fun LoadingView() {
         modifier = Modifier
             .fillMaxSize(),
     ) {
-        CircularProgressIndicator()
+        CircularWavyProgressIndicator()
     }
 }
 
@@ -183,7 +183,7 @@ private fun DisconnectedView(
             enabled = !isLoginLoading && username.isNotBlank() && password.isNotBlank(),
         ) {
             if (isLoginLoading) {
-                CircularProgressIndicator()
+                CircularWavyProgressIndicator()
             } else {
                 Text(LocalFeedFlowStrings.current.accountConnectButton)
             }
@@ -217,7 +217,7 @@ private fun ConnectedView(
                         ),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    CircularProgressIndicator()
+                    CircularWavyProgressIndicator()
                     Text(
                         text = LocalFeedFlowStrings.current.accountRefreshProgress,
                         style = MaterialTheme.typography.bodyMedium,

@@ -1,5 +1,6 @@
 package com.prof18.feedflow.shared.ui.theme
 
+import androidx.compose.material3.MaterialExpressiveTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -26,7 +27,7 @@ fun FeedFlowTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
+    MaterialExpressiveTheme(
         colorScheme = colorScheme,
         shapes = FeedFlowShapes,
         content = content,

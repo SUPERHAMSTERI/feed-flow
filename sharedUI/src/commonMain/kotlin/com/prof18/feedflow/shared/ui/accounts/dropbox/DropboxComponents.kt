@@ -9,7 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.FileUpload
 import androidx.compose.material.icons.filled.LinkOff
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -87,7 +87,7 @@ private fun LoadingView() {
         modifier = Modifier
             .fillMaxSize(),
     ) {
-        CircularProgressIndicator()
+        CircularWavyProgressIndicator()
     }
 }
 
@@ -117,7 +117,7 @@ private fun ConnectedView(
                         ),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    CircularProgressIndicator()
+                    CircularWavyProgressIndicator()
                     Text(
                         text = LocalFeedFlowStrings.current.accountRefreshProgress,
                         style = MaterialTheme.typography.bodyMedium,

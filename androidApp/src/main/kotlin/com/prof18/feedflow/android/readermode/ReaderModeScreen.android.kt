@@ -16,7 +16,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.FloatingToolbarDefaults.ScreenOffset
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -200,7 +200,7 @@ internal fun ReaderModeScreen(
                                 .padding(contentPadding)
                                 .fillMaxSize(),
                         ) {
-                            CircularProgressIndicator()
+                            CircularWavyProgressIndicator()
                         }
                     }
 
@@ -274,7 +274,7 @@ private fun FallbackWebView(
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.surface),
             ) {
-                CircularProgressIndicator()
+                CircularWavyProgressIndicator()
             }
         }
     }

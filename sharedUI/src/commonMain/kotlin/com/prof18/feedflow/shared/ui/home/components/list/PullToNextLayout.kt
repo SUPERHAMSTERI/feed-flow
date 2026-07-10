@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -191,18 +191,16 @@ fun PullToNextIndicator(
                 .clip(CircleShape)
                 .background(Color.Transparent),
         ) {
-            CircularProgressIndicator(
+            CircularWavyProgressIndicator(
                 progress = { 1f },
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.surface,
-                strokeWidth = 2.dp,
                 trackColor = Color.Transparent,
             )
-            CircularProgressIndicator(
+            CircularWavyProgressIndicator(
                 progress = { fillProgress },
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.primary,
-                strokeWidth = 2.dp,
                 trackColor = Color.Transparent,
             )
             Icon(

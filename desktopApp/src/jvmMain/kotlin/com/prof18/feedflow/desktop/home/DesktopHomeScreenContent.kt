@@ -14,7 +14,8 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState
 import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.foundation.rememberScrollbarAdapter
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.CircularWavyProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
@@ -53,6 +54,7 @@ import com.prof18.feedflow.shared.ui.utils.LocalReduceMotion
 import com.prof18.feedflow.shared.ui.utils.scrollToItemConditionally
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun DesktopHomeScreenContent(
     displayState: HomeDisplayState,
@@ -214,7 +216,7 @@ fun DesktopHomeScreenContent(
                                             modifier = Modifier
                                                 .fillMaxSize(),
                                         ) {
-                                            CircularProgressIndicator()
+                                            CircularWavyProgressIndicator()
                                         }
                                     }
 
@@ -267,6 +269,7 @@ fun DesktopHomeScreenContent(
                         if (showListScrollbar) {
                             VerticalScrollbar(
                                 modifier = Modifier
+                                    .padding(Spacing.xsmall)
                                     .align(Alignment.TopEnd)
                                     .fillMaxHeight(),
                                 adapter = rememberScrollbarAdapter(listState),
